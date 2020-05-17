@@ -1,0 +1,26 @@
+language: cpp
+dist: xenial
+
+matrix:
+  include:
+    # ---------------------------------------------------------------------------------------------
+    # linux gcc
+
+    - name: "linux gcc-7"
+      os: linux
+      addons:
+        apt: { packages: [g++-7],
+               sources:  [ubuntu-toolchain-r-test] }
+      env: MATRIX_EVAL="CC=gcc-7 && CXX=g++-7 && BUILD_TYPE=Release"
+
+before_install:
+  - eval "${MATRIX_EVAL}"
+
+script:
+  - mkdir build && cd build
+  - cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+  - cat compile_commands.json
+  - cmake --build . -- -j2
+
+notifications:
+  email: false
