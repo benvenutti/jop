@@ -9,8 +9,8 @@ matrix:
     - name: "linux gcc-7"
       os: linux
       addons:
-        apt: { packages: [g++-7],
-               sources:  [ubuntu-toolchain-r-test] }
+        apt: { packages: [g++-7, libboost-all-dev],
+               sources:  [ubuntu-toolchain-r-test, boost-latest] }
       env: MATRIX_EVAL="CC=gcc-7 && CXX=g++-7 && BUILD_TYPE=Release"
 
 before_install:
