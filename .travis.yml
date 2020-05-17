@@ -20,6 +20,20 @@ matrix:
                packages: [g++-7, libboost-all-dev] }
       env: MATRIX_EVAL="CC=gcc-7 && CXX=g++-7 && BUILD_TYPE=Debug"
 
+    - name: "linux gcc-8"
+      os: linux
+      addons:
+        apt: { sources:  [ubuntu-toolchain-r-test, boost-latest],
+               packages: [g++-8, libboost-all-dev] }
+      env: MATRIX_EVAL="CC=gcc-8 && CXX=g++-8 && BUILD_TYPE=Release"
+
+    - name: "linux gcc-9"
+      os: linux
+      addons:
+        apt: { sources:  [ubuntu-toolchain-r-test, boost-latest],
+               packages: [g++-9, libboost-all-dev] }
+      env: MATRIX_EVAL="CC=gcc-9 && CXX=g++-9 && BUILD_TYPE=Release"
+
 before_install:
   - eval "${MATRIX_EVAL}"
 
