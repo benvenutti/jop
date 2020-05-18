@@ -7,7 +7,7 @@ configuration:
 
 environment:
   matrix:
-    - job_name: Visual Studio 2017
+    - job_name: Visual Studio 2017 (%configuration%)
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       CMAKE_GENERATOR: Visual Studio 15 2017 Win64
       BOOST_ROOT: C:\Libraries\boost_1_67_0
