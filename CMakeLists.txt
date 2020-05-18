@@ -10,7 +10,7 @@ endif()
 # project
 
 cmake_minimum_required( VERSION 3.12 FATAL_ERROR )
-project( jop VERSION 0.0.1 LANGUAGES CXX )
+project( jvp VERSION 0.0.1 LANGUAGES CXX )
 
 # ---------------------------------------------------------------------------------------
 # dependencies
