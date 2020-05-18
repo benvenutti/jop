@@ -59,28 +59,28 @@ matrix:
       os: linux
       addons:
         apt: { sources:  [llvm-toolchain-xenial-7, ubuntu-toolchain-r-test, boost-latest],
-               packages: [clang-7, libstdc++-7-dev, libboost-all-dev] }
+               packages: [clang-7, libstdc++-7-dev, libboost1.67-all-dev] }
       env: MATRIX_EVAL="CC=clang-7 && CXX=clang++-7 && BUILD_TYPE=Release"
 
     - name: "linux clang-7 (libstdc++, debug)"
       os: linux
       addons:
         apt: { sources:  [llvm-toolchain-xenial-7, ubuntu-toolchain-r-test, boost-latest],
-               packages: [clang-7, libstdc++-7-dev, libboost-all-dev] }
+               packages: [clang-7, libstdc++-7-dev, libboost1.67-all-dev] }
       env: MATRIX_EVAL="CC=clang-7 && CXX=clang++-7 && BUILD_TYPE=Debug"
 
     - name: "linux clang-7 (libc++)"
       os: linux
       addons:
         apt: { sources:  [llvm-toolchain-xenial-7, ubuntu-toolchain-r-test, boost-latest],
-               packages: [clang-7, libc++-7-dev, libc++abi-7-dev, libboost-all-dev] }
+               packages: [clang-7, libc++-7-dev, libc++abi-7-dev, libboost1.67-all-dev] }
       env: MATRIX_EVAL="CC=clang-7 && CXX='clang++-7 -stdlib=libc++' && BUILD_TYPE=Release"
 
     - name: "linux clang-7 (libc++, debug)"
       os: linux
       addons:
         apt: { sources:  [llvm-toolchain-xenial-7, ubuntu-toolchain-r-test, boost-latest],
-               packages: [clang-7, libc++-7-dev, libc++abi-7-dev, libboost-all-dev] }
+               packages: [clang-7, libc++-7-dev, libc++abi-7-dev, libboost1.67-all-dev] }
       env: MATRIX_EVAL="CC=clang-7 && CXX='clang++-7 -stdlib=libc++' && BUILD_TYPE=Debug"
 
 before_install:
