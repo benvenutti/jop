@@ -55,21 +55,21 @@ matrix:
     # ---------------------------------------------------------------------------------------------
     # linux clang
 
-    - name: "linux clang-7 (libstdc++)"
+    - name: "linux clang-7"
       os: linux
       addons:
         apt: { sources:  [llvm-toolchain-xenial-7, ubuntu-toolchain-r-test, boost-latest],
                packages: [clang-7, libstdc++-7-dev, libboost-all-dev] }
       env: MATRIX_EVAL="CC=clang-7 && CXX=clang++-7 && BUILD_TYPE=Release"
 
-    - name: "linux clang-7 (libstdc++, debug)"
+    - name: "linux clang-7 (debug)"
       os: linux
       addons:
         apt: { sources:  [llvm-toolchain-xenial-7, ubuntu-toolchain-r-test, boost-latest],
                packages: [clang-7, libstdc++-7-dev, libboost-all-dev] }
       env: MATRIX_EVAL="CC=clang-7 && CXX=clang++-7 && BUILD_TYPE=Debug"
 
-    - name: "linux clang-8 (libstdc++)"
+    - name: "linux clang-8"
       os: linux
       addons:
         apt: { sources:  [llvm-toolchain-xenial-8, ubuntu-toolchain-r-test, boost-latest],
