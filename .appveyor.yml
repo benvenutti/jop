@@ -7,19 +7,13 @@ configuration:
 
 environment:
   matrix:
-    - job_name: Visual Studio 2017
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       CMAKE_GENERATOR: Visual Studio 15 2017 Win64
       BOOST_ROOT: C:\Libraries\boost_1_67_0
 
-    - job_name: Visual Studio 2019
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
       CMAKE_GENERATOR: Visual Studio 16 2019
       BOOST_ROOT: C:\Libraries\boost_1_71_0
-
-init:
-  - cmake --version
-  - msbuild /version
 
 install:
   - git submodule update --init --recursive
@@ -27,9 +21,9 @@ install:
 before_build:
   - md build
   - cd build
-  - cmake -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE=%configuration% -DBoost_USE_STATIC_LIBS=ON -DWARNINGS_AS_ERRORS=FALSE ..
+  - cmake -G "%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE=%configuration% -DBoost_USE_STATIC_LIBS=ON -DWARNINGS_AS_ERRORS=FALSE ..
 
 build:
   project: build/jvp.sln
   parallel: true
-  verbosity: quiet
+  verbosity: minimal
