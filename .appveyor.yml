@@ -27,3 +27,6 @@ build:
   project: build/jvp.sln
   parallel: true
   verbosity: minimal
+
+test_script:
+  - ctest -C %configuration% -VV .
