@@ -17,7 +17,7 @@ project( jvp VERSION 0.0.1 LANGUAGES CXX )
 # dependencies
 
 set( Boost_USE_STATIC_LIBS ON )
-find_package( Boost 1.54 COMPONENTS filesystem system iostreams REQUIRED )
+find_package( Boost 1.65 COMPONENTS filesystem system iostreams REQUIRED )
 
 add_library( catch2 INTERFACE )
 target_include_directories( catch2 INTERFACE libs/Catch2/single_include )
