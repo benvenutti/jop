@@ -34,21 +34,21 @@ matrix:
     - name: "linux gcc-7 (debug)"
       os: linux
       addons:
-        apt: { sources:  [ubuntu-toolchain-r-test, boost-latest],
+        apt: { sources:  [ubuntu-toolchain-r-test],
                packages: [g++-7, libboost-all-dev] }
       env: MATRIX_EVAL="CC=gcc-7 && CXX=g++-7 && BUILD_TYPE=Debug"
 
     - name: "linux gcc-8"
       os: linux
       addons:
-        apt: { sources:  [ubuntu-toolchain-r-test, boost-latest],
+        apt: { sources:  [ubuntu-toolchain-r-test],
                packages: [g++-8, libboost-all-dev] }
       env: MATRIX_EVAL="CC=gcc-8 && CXX=g++-8 && BUILD_TYPE=Release"
 
     - name: "linux gcc-9"
       os: linux
       addons:
-        apt: { sources:  [ubuntu-toolchain-r-test, boost-latest],
+        apt: { sources:  [ubuntu-toolchain-r-test],
                packages: [g++-9, libboost-all-dev] }
       env: MATRIX_EVAL="CC=gcc-9 && CXX=g++-9 && BUILD_TYPE=Release"
 
@@ -58,21 +58,21 @@ matrix:
     - name: "linux clang-7"
       os: linux
       addons:
-        apt: { sources:  [llvm-toolchain-xenial-7, ubuntu-toolchain-r-test, boost-latest],
+        apt: { sources:  [llvm-toolchain-xenial-7, ubuntu-toolchain-r-test],
                packages: [clang-7, libstdc++-7-dev, libboost-all-dev] }
       env: MATRIX_EVAL="CC=clang-7 && CXX=clang++-7 && BUILD_TYPE=Release"
 
     - name: "linux clang-7 (debug)"
       os: linux
       addons:
-        apt: { sources:  [llvm-toolchain-xenial-7, ubuntu-toolchain-r-test, boost-latest],
+        apt: { sources:  [llvm-toolchain-xenial-7, ubuntu-toolchain-r-test],
                packages: [clang-7, libstdc++-7-dev, libboost-all-dev] }
       env: MATRIX_EVAL="CC=clang-7 && CXX=clang++-7 && BUILD_TYPE=Debug"
 
     - name: "linux clang-8"
       os: linux
       addons:
-        apt: { sources:  [llvm-toolchain-xenial-8, ubuntu-toolchain-r-test, boost-latest],
+        apt: { sources:  [llvm-toolchain-xenial-8, ubuntu-toolchain-r-test],
                packages: [clang-8, libstdc++-8-dev, libboost-all-dev] }
       env: MATRIX_EVAL="CC=clang-8 && CXX=clang++-8 && BUILD_TYPE=Release"
 
